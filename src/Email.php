@@ -3,18 +3,36 @@ declare(strict_types=1);
 
 namespace Jakala\ValueObjects;
 
+use Jakala\ValueObjects\Exception\InvalidEmail;
 use ValueObject;
 
-final class Email implements ValueObject, \Stringable
+class Email implements ValueObject, \Stringable
 {
-
-    public function __toString()
+    public function __construct(protected string $value)
     {
-        // TODO: Implement __toString() method.
+        $this->setValue($value);
     }
 
-    public function value(): mixed
+    public function value(): string
     {
-        // TODO: Implement value() method.
+        return $this->value;
+    }
+
+    public function __toString(): string
+    {
+        return $this->value;
+    }
+
+    private function setValue(string $value): void
+    {
+        $this->validate($value);
+        $this->value = $value;
+    }
+
+    private function validate(string $value): void
+    {
+        if (!filter_var($value, FILTER_VALIDATE_EMAIL)) {
+            throw new InvalidEmail($value);
+        }
     }
 }
