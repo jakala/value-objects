@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace Jakala\ValueObjects;
 
-use Jakala\ValueObjects\Exception\InvalidNull;
 use Jakala\ValueObjects\Exception\InvalidNumber;
 use ValueObject;
 
