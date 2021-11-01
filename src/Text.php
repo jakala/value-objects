@@ -8,7 +8,7 @@ use ValueObject;
 
 class Text implements ValueObject, \Stringable
 {
-    public function __construct(protected ?string $value, protected ?bool $nullable = false)
+    public function __construct(protected string $value)
     {
         $this->setValue($value);
     }
@@ -23,16 +23,8 @@ class Text implements ValueObject, \Stringable
         return (string)$this->value;
     }
 
-    private function setValue(?string $value): void
+    private function setValue(string $value): void
     {
-        $this->validateNullValue($value);
         $this->value = $value;
-    }
-
-    private function validateNullValue(?string $value): void
-    {
-        if (!$this->nullable && empty($value)) {
-            throw new InvalidNull();
-        }
     }
 }

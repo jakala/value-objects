@@ -9,12 +9,12 @@ use ValueObject;
 
 class Number implements ValueObject, \Stringable
 {
-    public function __construct(protected mixed $value, protected ?bool $nullable = false)
+    public function __construct(protected mixed $value)
     {
         $this->setValue($value);
     }
 
-    public function value(): ?int
+    public function value(): int
     {
         return $this->value;
     }
@@ -26,21 +26,13 @@ class Number implements ValueObject, \Stringable
 
     private function setValue(mixed $value): void
     {
-        $this->validateNullableValue($value);
         $this->validateIsNumber($value);
         $this->value = $value;
     }
 
-    private function validateNullableValue(mixed $value): void
-    {
-        if (!$this->nullable && is_null($value)) {
-            throw new InvalidNull();
-        }
-    }
-
     private function validateIsNumber(mixed $value): void
     {
-        if(!$this->nullable && !is_numeric($value)) {
+        if(!is_numeric($value)) {
             throw new InvalidNumber($value);
         }
     }
