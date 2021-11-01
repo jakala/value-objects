@@ -1,0 +1,27 @@
+{
+  "name": "jakala/value-objects",
+  "description": "ValueObjects genéricos",
+  "type": "library",
+  "license": "propietary",
+  "version": "0.0.0",
+  "minimum-stability": "stable",
+  "authors": [
+    {
+      "name": "Jakala"
+    }
+  ],
+  "prefer-stable": true,
+  "autoload": {
+    "psr-4": {
+      "Jakala\\ValueObjects\\": ["src"]
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Jakala\\ValueObjects\\Test\\": ["tests"]
+    }
+  },
+  "require": {
+    "php": ">=8.0"
+  }
+}
