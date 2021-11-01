@@ -7,7 +7,7 @@ use Jakala\ValueObjects\Exception\InvalidNull;
 use Jakala\ValueObjects\Exception\InvalidNumber;
 use ValueObject;
 
-final class Number implements ValueObject, \Stringable
+class Number implements ValueObject, \Stringable
 {
     public function __construct(protected mixed $value, protected ?bool $nullable = false)
     {

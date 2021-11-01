@@ -21,19 +21,24 @@ class Boolean implements ValueObject, \Stringable
 
     public function value(): mixed
     {
-        return $this->value ? self::TRUE : self::FALSE;
+        return match($this->internalValue) {
+            null => null,
+            true => self::TRUE,
+            false => self::FALSE
+        };
     }
 
     public function __toString(): string
     {
-        return $this->value . '';
+        return $this->value() . '';
     }
 
     private function setValue(mixed $value): void
     {
         $this->validateNullableValue($value);
         $this->validateBooleanValue($value);
-        $this->value = $value;
+
+        $this->setInternalValue($value);
     }
 
     private function validateNullableValue(mixed $value): void
@@ -48,6 +53,15 @@ class Boolean implements ValueObject, \Stringable
         match($value) {
             null, self::FALSE, self::TRUE => 1,
             default => throw new InvalidBoolean($value)
+        };
+    }
+
+    protected function setInternalValue(mixed $value): void
+    {
+        $this->internalValue = match($value) {
+            self::FALSE => false,
+            self::TRUE => true,
+            default => null
         };
     }
 }
