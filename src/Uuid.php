@@ -9,7 +9,7 @@ use Stringable;
 use ValueObject;
 use Ramsey\Uuid\Uuid as RamseyUuid;
 
-final class Uuid implements ValueObject, Stringable
+class Uuid implements ValueObject, Stringable
 {
     public function __construct(protected string $value)
     {
