@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Jakala\ValueObjects\Exception;
@@ -24,5 +25,4 @@ final class InvalidEmail extends DomainError
     {
         return sprintf('Value <%s> is not a valid email address.', $this->value);
     }
-
 }

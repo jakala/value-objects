@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Jakala\ValueObjects;
@@ -31,7 +32,7 @@ class Number implements ValueObject, \Stringable
 
     private function validateIsNumber(mixed $value): void
     {
-        if(!is_numeric($value)) {
+        if (!is_numeric($value)) {
             throw new InvalidNumber($value);
         }
     }

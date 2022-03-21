@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Jakala\ValueObjects;
@@ -20,7 +21,7 @@ class Boolean implements ValueObject, \Stringable
 
     public function value(): mixed
     {
-        return match($this->internalValue) {
+        return match ($this->internalValue) {
             null => null,
             true => self::TRUE,
             false => self::FALSE
@@ -41,7 +42,7 @@ class Boolean implements ValueObject, \Stringable
 
     private function validateBooleanValue(mixed $value): void
     {
-        match($value) {
+        match ($value) {
             self::FALSE, self::TRUE => $value,
             default => throw new InvalidBoolean($value)
         };
@@ -49,7 +50,7 @@ class Boolean implements ValueObject, \Stringable
 
     protected function setInternalValue(mixed $value): void
     {
-        $this->internalValue = match($value) {
+        $this->internalValue = match ($value) {
             self::FALSE => false,
             self::TRUE => true,
         };

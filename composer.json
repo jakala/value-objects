@@ -13,12 +13,12 @@
   "prefer-stable": true,
   "autoload": {
     "psr-4": {
-      "Jakala\\ValueObjects\\": ["src"]
+      "Jakala\\ValueObjects\\": "src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Jakala\\ValueObjects\\Test\\": ["tests"]
+      "Jakala\\ValueObjects\\Test\\": "tests"
     }
   },
   "require": {

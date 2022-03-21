@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Jakala\ValueObjects;
@@ -45,7 +46,7 @@ class Uuid implements ValueObject, Stringable
 
     private function validateNotEmptyValue(string $value): void
     {
-        if(empty($value)) {
+        if (empty($value)) {
             throw new InvalidNull();
         }
     }
