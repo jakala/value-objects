@@ -6,7 +6,6 @@ namespace Jakala\ValueObjects;
 
 use DateTime;
 use Jakala\ValueObjects\Exception\InvalidNull;
-use ValueObject;
 
 class Time implements ValueObject, \Stringable
 {

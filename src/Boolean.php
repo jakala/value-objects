@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Jakala\ValueObjects;
 
 use Jakala\ValueObjects\Exception\InvalidBoolean;
-use ValueObject;
 
 class Boolean implements ValueObject, \Stringable
 {

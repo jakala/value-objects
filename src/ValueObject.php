@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Jakala\ValueObjects;
+namespace Jakala\ValueObjects;
 
 interface ValueObject
 {

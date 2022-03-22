@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Jakala\ValueObjects;
 
 use Jakala\ValueObjects\Exception\InvalidEmail;
-use ValueObject;
 
 class Email implements ValueObject, \Stringable
 {

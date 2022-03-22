@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Jakala\ValueObjects;
 
-use ValueObject;
-
 class Text implements ValueObject, \Stringable
 {
     public function __construct(protected string $value)

@@ -7,7 +7,6 @@ namespace Jakala\ValueObjects;
 use Jakala\ValueObjects\Exception\InvalidNull;
 use Jakala\ValueObjects\Exception\InvalidUuid;
 use Stringable;
-use ValueObject;
 use Ramsey\Uuid\Uuid as RamseyUuid;
 
 class Uuid implements ValueObject, Stringable
